@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phcie du Carrefour Labia</title>
+<style>
+/* ═══════════════════════════════════════
+   LIQUID GLASS DESIGN SYSTEM
+═══════════════════════════════════════ */
+:root {
+  --g1:#16a34a; --g2:#15803d; --g3:#dcfce7; --g4:#bbf7d0;
+  --acc:#e11d48; --acc2:#fb7185;
+  --bg-l:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 40%,#f0f9ff 100%);
+  --bg-d:linear-gradient(135deg,#0a0f0a 0%,#071a0e 40%,#071520 100%);
+  --glass-l:rgba(255,255,255,0.55);
+  --glass-d:rgba(10,20,12,0.55);
+  --glass-border-l:rgba(255,255,255,0.7);
+  --glass-border-d:rgba(255,255,255,0.08);
+  --txt-l:#1a2e1a; --txt-d:#e8f5e9;
+  --sub-l:#4b7a53; --sub-d:#86c98e;
+  --card-l:rgba(255,255,255,0.6); --card-d:rgba(255,255,255,0.05);
+  --inp-l:rgba(255,255,255,0.75); --inp-d:rgba(255,255,255,0.08);
+  --shadow:0 8px 32px rgba(22,163,74,0.12),0 2px 8px rgba(0,0,0,0.06);
+  --shadow-d:0 8px 32px rgba(0,0,0,0.4);
+  --radius:20px;
+}
+html.dark {
+  --bg:var(--bg-d); --glass:var(--glass-d); --gb:var(--glass-border-d);
+  --txt:var(--txt-d); --sub:var(--sub-d); --card:var(--card-d);
+  --inp:var(--inp-d); --sh:var(--shadow-d);
+}
+html:not(.dark) {
+  --bg:var(--bg-l); --glass:var(--glass-l); --gb:var(--glass-border-l);
+  --txt:var(--txt-l); --sub:var(--sub-l); --card:var(--card-l);
+  --inp:var(--inp-l); --sh:var(--shadow);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  min-height:100vh; background:var(--bg); color:var(--txt);
+  transition:background 0.4s,color 0.3s;
+  overflow-x:hidden;
+}
+/* ── FLOATING PARTICLES ── */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.p{position:absolute;border-radius:50%;animation:float-p linear infinite;}
+@keyframes float-p{0%{transform:translateY(110vh) scale(0.5);opacity:0}
+  10%{opacity:0.6}90%{opacity:0.4}100%{transform:translateY(-10vh) scale(1.2);opacity:0}}
+
+/* ── GLASS CARD ── */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--gb);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  box-shadow:var(--sh);
+  border-radius:var(--radius);
+}
+/* ── NAVBAR ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--glass);
+  border-bottom:1px solid var(--gb);
+  backdrop-filter:blur(24px) saturate(200%);
+  -webkit-backdrop-filter:blur(24px) saturate(200%);
+}
+.nav-inner{
+  max-width:900px;margin:0 auto;padding:0 1rem;
+  display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{width:40px;height:40px;object-fit:contain;}
+.nav-logo-text h1{font-size:1rem;font-weight:700;color:var(--g1);line-height:1.2;}
+.nav-logo-text p{font-size:0.68rem;color:var(--sub);letter-spacing:0.06em;}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.btn-pill{
+  padding:8px 16px;border-radius:50px;border:1.5px solid var(--g1);
+  background:transparent;color:var(--g1);font-size:0.8rem;font-weight:600;
+  cursor:pointer;transition:all 0.25s;white-space:nowrap;
+}
+.btn-pill:hover,.btn-pill.active{background:var(--g1);color:#fff;box-shadow:0 4px 14px rgba(22,163,74,0.3);}
+.btn-icon-sm{
+  width:36px;height:36px;border-radius:12px;border:1.5px solid var(--gb);
+  background:var(--card);cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--txt);transition:all 0.2s;
+}
+.btn-icon-sm:hover{background:var(--g3);border-color:var(--g1);color:var(--g1);}
+
+/* ── GARDE BADGE ── */
+.garde-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:5px 14px;border-radius:50px;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  background:rgba(22,163,74,0.12);color:var(--g1);
+  border:1.5px solid rgba(22,163,74,0.35);
+}
+.garde-dot{
+  width:10px;height:10px;border-radius:50%;background:#16a34a;
+  box-shadow:0 0 0 3px rgba(22,163,74,0.25),0 0 12px rgba(22,163,74,0.6);
+  animation:garde-pulse 1.5s ease-in-out infinite;
+}
+@keyframes garde-pulse{0%,100%{box-shadow:0 0 0 3px rgba(22,163,74,0.25),0 0 12px rgba(22,163,74,0.6);}
+  50%{box-shadow:0 0 0 6px rgba(22,163,74,0.1),0 0 20px rgba(22,163,74,0.8);}}
+.garde-badge-off{display:none;}
+
+/* ── NAV INFO BAR ── */
+.nav-info{
+  border-top:1px solid var(--gb);
+  padding:8px 1rem;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
+  font-size:0.78rem;color:var(--sub);
+}
+.nav-info span{display:flex;align-items:center;gap:5px;}
+
+/* ── TABS ── */
+.tabs{
+  display:flex;gap:4px;padding:4px;
+  background:var(--card);border:1px solid var(--gb);
+  border-radius:16px;margin-bottom:20px;
+}
+.tab{
+  flex:1;padding:10px 8px;border-radius:12px;border:none;
+  font-size:0.85rem;font-weight:600;cursor:pointer;
+  background:transparent;color:var(--sub);transition:all 0.25s;
+}
+.tab.active{background:var(--g1);color:#fff;box-shadow:0 4px 14px rgba(22,163,74,0.3);}
+.tab-content{display:none;}
+.tab-content.active{display:block;animation:tab-in 0.3s ease;}
+@keyframes tab-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── HERO ── */
+.hero{
+  max-width:900px;margin:0 auto;padding:40px 1rem 20px;
+  text-align:center;position:relative;z-index:1;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(22,163,74,0.1);color:var(--g1);
+  padding:6px 16px;border-radius:50px;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;
+  border:1px solid rgba(22,163,74,0.2);
+}
+.hero h2{
+  font-size:2.4rem;font-weight:800;line-height:1.1;margin-bottom:12px;
+  background:linear-gradient(135deg,var(--g1),#059669,var(--acc));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{font-size:0.95rem;color:var(--sub);max-width:500px;margin:0 auto 24px;line-height:1.7;}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-main{
+  padding:13px 28px;border-radius:50px;border:none;
+  background:linear-gradient(135deg,var(--g1),#059669);
+  color:#fff;font-size:0.9rem;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 20px rgba(22,163,74,0.35);transition:all 0.25s;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(22,163,74,0.45);}
+.btn-outline{
+  padding:13px 28px;border-radius:50px;
+  border:2px solid var(--g1);background:transparent;
+  color:var(--g1);font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.25s;
+}
+.btn-outline:hover{background:var(--g1);color:#fff;}
+
+/* ── MAIN ── */
+.main{max-width:900px;margin:0 auto;padding:0 1rem 60px;position:relative;z-index:1;}
+
+/* ── SEARCH ── */
+.search-wrap{position:relative;margin-bottom:16px;}
+.search-wrap input{
+  width:100%;padding:14px 20px 14px 50px;
+  border-radius:16px;border:2px solid var(--gb);
+  background:var(--inp);color:var(--txt);
+  font-size:0.95rem;outline:none;
+  backdrop-filter:blur(10px);transition:border-color 0.2s,box-shadow 0.2s;
+}
+.search-wrap input:focus{border-color:var(--g1);box-shadow:0 0 0 4px rgba(22,163,74,0.1);}
+.search-wrap input::placeholder{color:var(--sub);opacity:0.7;}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--g1);font-size:20px;}
+
+/* ── MEDICINE TABLE ── */
+.med-table-wrap{overflow-x:auto;border-radius:16px;overflow:hidden;}
+table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+thead tr{background:var(--g1);color:#fff;}
+thead th{padding:12px 16px;text-align:left;font-weight:600;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;}
+tbody tr{border-bottom:1px solid var(--gb);transition:background 0.15s;}
+tbody tr:hover{background:rgba(22,163,74,0.06);}
+tbody td{padding:11px 16px;color:var(--txt);}
+.badge-yes{color:#16a34a;font-weight:700;background:rgba(22,163,74,0.1);padding:2px 10px;border-radius:50px;font-size:0.78rem;}
+.badge-no{color:#e11d48;font-weight:700;background:rgba(225,29,72,0.1);padding:2px 10px;border-radius:50px;font-size:0.78rem;}
+
+/* ── HORAIRES ── */
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:600px){.schedule-grid{grid-template-columns:1fr;}}
+.schedule-card{padding:20px;}
+.schedule-card h3{font-size:0.9rem;font-weight:700;color:var(--g1);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.day-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--gb);font-size:0.83rem;}
+.day-row:last-child{border-bottom:none;}
+.day-name{font-weight:600;color:var(--txt);}
+.day-time{color:var(--sub);font-size:0.8rem;}
+.day-closed{color:var(--acc);font-weight:600;font-size:0.78rem;}
+.day-24{color:var(--g1);font-weight:700;font-size:0.78rem;background:rgba(22,163,74,0.1);padding:1px 8px;border-radius:50px;}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:580px){.services-grid{grid-template-columns:1fr;}}
+.service-item{padding:20px;display:flex;gap:14px;align-items:flex-start;}
+.service-icon{font-size:28px;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(22,163,74,0.1);border-radius:14px;}
+.service-item h4{font-size:0.88rem;font-weight:700;color:var(--txt);margin-bottom:5px;}
+.service-item p{font-size:0.78rem;color:var(--sub);line-height:1.55;}
+
+/* ── À PROPOS ── */
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:20px;align-items:start;}
+@media(max-width:600px){.about-grid{grid-template-columns:1fr;}}
+.about-logo-card{padding:24px;text-align:center;}
+.about-logo-card img{width:90px;height:90px;object-fit:contain;margin-bottom:12px;}
+.about-logo-card h3{font-size:1rem;font-weight:800;color:var(--g1);}
+.about-logo-card p{font-size:0.78rem;color:var(--sub);margin-top:4px;}
+.about-info{padding:24px;}
+.about-info h3{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--txt);margin-bottom:14px;}
+.about-info p{font-size:0.88rem;color:var(--sub);line-height:1.75;margin-bottom:12px;}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.chip{padding:5px 14px;border-radius:50px;background:rgba(22,163,74,0.1);color:var(--g1);font-size:0.75rem;font-weight:600;border:1px solid rgba(22,163,74,0.2);}
+
+/* ── CONTACT ── */
+.contact-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+@media(max-width:640px){.contact-info-grid{grid-template-columns:1fr;}}
+.contact-info-card{padding:18px;text-align:center;}
+.contact-info-card .ci-icon{font-size:26px;margin-bottom:8px;}
+.contact-info-card h4{font-size:0.8rem;font-weight:700;color:var(--g1);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
+.contact-info-card p,.contact-info-card a{font-size:0.83rem;color:var(--sub);text-decoration:none;line-height:1.6;display:block;}
+.contact-info-card a:hover{color:var(--g1);}
+
+/* ── CONTACT FORM ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:580px){.form-grid{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{font-size:0.78rem;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:0.05em;}
+.form-group label .req{color:var(--acc);}
+.form-group input,.form-group textarea,.form-group select{
+  padding:12px 14px;border-radius:12px;border:2px solid var(--gb);
+  background:var(--inp);color:var(--txt);font-size:0.88rem;
+  outline:none;transition:border-color 0.2s,box-shadow 0.2s;
+  backdrop-filter:blur(8px);font-family:inherit;
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+  border-color:var(--g1);box-shadow:0 0 0 4px rgba(22,163,74,0.1);
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--sub);opacity:0.7;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-group select option{background:#fff;color:#1a2e1a;}
+.btn-submit{
+  margin-top:6px;padding:13px 32px;border-radius:50px;border:none;
+  background:linear-gradient(135deg,var(--g1),#059669);
+  color:#fff;font-size:0.9rem;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 20px rgba(22,163,74,0.3);transition:all 0.25s;
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(22,163,74,0.4);}
+
+/* ── MAP SECTION ── */
+.map-container{border-radius:16px;overflow:hidden;margin-top:20px;}
+.map-placeholder{
+  background:linear-gradient(135deg,rgba(22,163,74,0.1),rgba(5,150,105,0.08));
+  height:200px;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:10px;color:var(--sub);cursor:pointer;
+  transition:background 0.2s;text-decoration:none;
+}
+.map-placeholder:hover{background:linear-gradient(135deg,rgba(22,163,74,0.18),rgba(5,150,105,0.14));}
+.map-placeholder span{font-size:3rem;}
+.map-placeholder p{font-size:0.88rem;font-weight:600;color:var(--g1);}
+
+/* ── PHARMACIST VIEW ── */
+.pharma-panel{padding:24px;}
+.pharma-panel h2{font-size:1.2rem;font-weight:800;color:var(--txt);margin-bottom:6px;}
+.pharma-panel>p{font-size:0.82rem;color:var(--sub);margin-bottom:20px;}
+.status-toggle{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;margin-bottom:16px;}
+.toggle-label{font-weight:700;color:var(--txt);font-size:0.9rem;}
+.toggle-desc{font-size:0.78rem;color:var(--sub);margin-top:2px;}
+.toggle-switch{position:relative;width:56px;height:28px;cursor:pointer;}
+.toggle-switch input{opacity:0;width:0;height:0;}
+.toggle-track{
+  position:absolute;inset:0;border-radius:14px;
+  background:rgba(0,0,0,0.15);transition:background 0.3s;
+}
+.toggle-switch input:checked+.toggle-track{background:var(--g1);}
+.toggle-thumb{
+  position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+  background:#fff;transition:transform 0.3s;box-shadow:0 2px 4px rgba(0,0,0,0.2);
+}
+.toggle-switch input:checked~.toggle-thumb{transform:translateX(28px);}
+.mode-info{padding:14px 20px;border-radius:14px;font-size:0.82rem;margin-bottom:16px;}
+.mode-active{background:rgba(22,163,74,0.1);color:var(--g1);border:1px solid rgba(22,163,74,0.25);}
+.mode-inactive{background:rgba(0,0,0,0.04);color:var(--sub);}
+html.dark .mode-inactive{background:rgba(255,255,255,0.04);}
+.demands-section{margin-top:20px;}
+.demands-section h3{font-size:0.9rem;font-weight:700;color:var(--txt);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.demand-card{padding:16px;margin-bottom:10px;position:relative;}
+.demand-card .d-time{font-size:0.72rem;color:var(--sub);margin-bottom:6px;}
+.demand-card .d-name{font-weight:700;font-size:0.88rem;color:var(--txt);}
+.demand-card .d-contact{font-size:0.8rem;color:var(--sub);margin-top:2px;}
+.demand-card .d-msg{font-size:0.82rem;color:var(--txt);margin-top:6px;line-height:1.55;}
+.demand-card .d-type{
+  display:inline-block;padding:2px 10px;border-radius:50px;
+  font-size:0.72rem;font-weight:700;margin-top:6px;
+  background:rgba(22,163,74,0.1);color:var(--g1);
+}
+.demand-card .d-del{
+  position:absolute;top:14px;right:14px;
+  background:none;border:none;cursor:pointer;color:var(--sub);font-size:16px;
+  padding:4px;border-radius:8px;transition:all 0.2s;
+}
+.demand-card .d-del:hover{background:rgba(225,29,72,0.1);color:var(--acc);}
+.empty-demands{text-align:center;padding:32px;color:var(--sub);font-size:0.88rem;}
+.empty-demands span{font-size:2rem;display:block;margin-bottom:8px;}
+
+/* ── LOGIN MODAL ── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--glass);border:1px solid var(--gb);
+  backdrop-filter:blur(24px);border-radius:24px;
+  padding:36px;width:380px;max-width:94vw;
+  box-shadow:0 24px 80px rgba(0,0,0,0.2);
+  animation:modal-in 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modal-in{from{opacity:0;transform:scale(0.88) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-box .modal-logo{text-align:center;margin-bottom:20px;}
+.modal-box .modal-logo img{width:64px;height:64px;object-fit:contain;}
+.modal-box h3{text-align:center;font-size:1.3rem;font-weight:800;color:var(--txt);margin-bottom:4px;}
+.modal-box p.modal-sub{text-align:center;font-size:0.82rem;color:var(--sub);margin-bottom:20px;}
+.modal-form-group{margin-bottom:14px;}
+.modal-form-group label{display:block;font-size:0.78rem;font-weight:700;color:var(--txt);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
+.modal-form-group input{
+  width:100%;padding:12px 14px;border-radius:12px;
+  border:2px solid var(--gb);background:var(--inp);
+  color:var(--txt);font-size:0.9rem;outline:none;transition:all 0.2s;
+}
+.modal-form-group input:focus{border-color:var(--g1);box-shadow:0 0 0 4px rgba(22,163,74,0.1);}
+.modal-err{color:var(--acc);font-size:0.8rem;margin-top:8px;text-align:center;display:none;}
+.btn-modal-submit{
+  width:100%;padding:13px;border-radius:14px;border:none;
+  background:linear-gradient(135deg,var(--g1),#059669);
+  color:#fff;font-size:0.95rem;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 18px rgba(22,163,74,0.3);transition:all 0.25s;margin-top:8px;
+}
+.btn-modal-submit:hover{transform:translateY(-2px);}
+.modal-close-btn{
+  position:absolute;top:14px;right:14px;background:none;border:none;
+  font-size:20px;cursor:pointer;color:var(--sub);padding:4px;border-radius:8px;
+}
+.modal-close-btn:hover{background:rgba(225,29,72,0.1);color:var(--acc);}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:24px;right:24px;z-index:2000;
+  background:var(--glass);border:1px solid var(--gb);
+  backdrop-filter:blur(20px);border-radius:14px;
+  padding:14px 20px;display:flex;align-items:center;gap:10px;
+  font-size:0.88rem;font-weight:600;color:var(--txt);
+  box-shadow:var(--sh);border-left:4px solid var(--g1);
+  transform:translateY(80px);opacity:0;
+  transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);max-width:320px;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.red{border-left-color:var(--acc);}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:24px 1rem;
+  border-top:1px solid var(--gb);font-size:0.78rem;color:var(--sub);
+  position:relative;z-index:1;
+}
+
+/* ── FLOATING PILLS ── */
+.floating-pill{
+  position:fixed;pointer-events:none;font-size:1.4rem;opacity:0.25;
+  animation:fp-float linear infinite;z-index:0;
+}
+@keyframes fp-float{
+  0%{transform:translateY(100vh) rotate(0deg);}
+  100%{transform:translateY(-120px) rotate(360deg);}
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+<div class="floating-pill" style="left:4%;animation-duration:18s;animation-delay:0s">💊</div>
+<div class="floating-pill" style="left:18%;animation-duration:22s;animation-delay:3s">🩺</div>
+<div class="floating-pill" style="left:35%;animation-duration:16s;animation-delay:7s">💉</div>
+<div class="floating-pill" style="left:55%;animation-duration:20s;animation-delay:1s">🧪</div>
+<div class="floating-pill" style="left:72%;animation-duration:25s;animation-delay:5s">🩹</div>
+<div class="floating-pill" style="left:88%;animation-duration:19s;animation-delay:9s">⚕️</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="data:image/png;base64,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5KQSSAXb+WeQ4gFXDBfVlZPOEHxGqzmlyWNujq9B0jBnSuAzO6eBVjwX1ZWTzhB8Rqirnhn2f78kFesO9Ront/Zchn2B4FyuGfYHgXKnk2FqTYERFkyEREAREQBERAEREAREQBERAEREBwdxVN0x9cy9eOb8Nqtmo5xPoiw/f77VXirr7pHPUuDntikjDQQANWbCd7hUfcKZ9RGjWETd6OSqiRse3ErdSV9dSMLKWsqIGuOZEchaCfQvt0avHdWu5d3zU87RWF+6d55WL9tNorC/dK88rF+2opLZVJqRf2QKWWtRMEX9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/ZnQ9dx/ZA3Rq8d1a7l3fNOjV47q13Lu+annaKwv3SvPKxftptFYX7pXnlYv200bVcf2ND13H9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/Y0PXcf2QN0avHdWu5d3zTo1eO6tdy7vmp52isL90rzysX7abRWF+6V55WL9tNG1XH9jQ9dx/ZAVTcrjVRc6qa+qmjzz2L5S4Z+AlZmC+rGyecIPiNU47RWF+6d55WL9tZNq0K4bt9zpa+K4XZ0lNMyZjXSx7ElrgRnkzc1LLbZUZaOd/Zlllq84jnYavck5n2B4FygGQARWRC4oEREMhERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf//Z" alt="Croix pharmacie">
+      <div class="nav-logo-text">
+        <h1>Phcie du Carrefour Labia</h1>
+        <p id="nav-tagline">Votre santé, notre priorité</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <!-- Garde indicator (client side, only shown when garde is ON) -->
+      <div class="garde-badge" id="garde-badge-nav" style="display:none;">
+        <span class="garde-dot"></span>
+        <span id="garde-label-nav">Garde 24h/24</span>
+      </div>
+      <button class="btn-icon-sm" id="btn-lang" onclick="toggleLang()" title="Language">🌐</button>
+      <button class="btn-icon-sm" id="btn-dark" onclick="toggleDark()" title="Mode sombre">🌙</button>
+      <button class="btn-pill" onclick="openLogin()" id="btn-pharma-nav">
+        <span id="login-btn-label">Pharmacien</span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-info">
+    <span>🕐 <span id="hours-bar">Lun–Sam : 07h30–19h00</span></span>
+    <span>🚨 <span id="guard-bar">Garde : Lun–Dim 24h/24 (semaine de garde)</span></span>
+    <span id="phone-bar">📱 <a href="tel:+2250748436938" style="color:var(--g1);text-decoration:none;">+225 074-843-6938</a></span>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-badge">🌿 <span id="hero-badge-txt">Pharmacie communautaire</span></div>
+  <h2 id="hero-title">Phcie du Carrefour Labia</h2>
+  <p id="hero-sub">Sous la direction du <strong>Pharmacien Bamba Aboubacary</strong> — Des soins pharmaceutiques de qualité à votre service, accessibles à tous.</p>
+  <div class="hero-cta">
+    <button class="btn-main" onclick="switchTab('meds')" id="cta-meds">Nos médicaments</button>
+    <button class="btn-outline" onclick="switchTab('contact')" id="cta-contact">Nous contacter</button>
+  </div>
+</section>
+
+<!-- ═══ MAIN CONTENT ═══ -->
+<main class="main">
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" id="tab-hours" onclick="switchTab('hours')"><span id="t-hours">⏰ Horaires</span></button>
+    <button class="tab" id="tab-meds" onclick="switchTab('meds')"><span id="t-meds">💊 Médicaments</span></button>
+    <button class="tab" id="tab-services" onclick="switchTab('services')"><span id="t-services">🏥 Services</span></button>
+    <button class="tab" id="tab-contact" onclick="switchTab('contact')"><span id="t-contact">📞 Contact</span></button>
+    <button class="tab" id="tab-demands" onclick="switchTab('demands')" style="display:none;"><span id="t-demands">📬 Demandes</span></button>
+    <button class="tab" id="tab-pharma" onclick="switchTab('pharma')" style="display:none;"><span id="t-pharma">⚙️ Pharmacien</span></button>
+  </div>
+
+  <!-- ── HORAIRES ── -->
+  <div class="tab-content active" id="content-hours">
+    <!-- Status card -->
+    <div class="glass" style="padding:20px;display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+      <span style="font-size:2rem;" id="status-icon">🔵</span>
+      <div>
+        <div style="font-weight:700;font-size:0.9rem;color:var(--txt);" id="status-title">Statut actuel</div>
+        <div style="font-size:0.82rem;color:var(--sub);margin-top:2px;" id="status-desc">Chargement...</div>
+      </div>
+    </div>
+    <!-- NORMAL schedule — visible when garde = false -->
+    <div class="glass schedule-card" id="hours-normal-block">
+      <h3>📅 <span id="sh-normal-title">Semaine normale</span></h3>
+      <div class="day-row"><span class="day-name" id="sh-mon">Lundi</span><span class="day-time">07h30 – 19h00</span></div>
+      <div class="day-row"><span class="day-name" id="sh-tue">Mardi</span><span class="day-time">07h30 – 19h00</span></div>
+      <div class="day-row"><span class="day-name" id="sh-wed">Mercredi</span><span class="day-time">07h30 – 19h00</span></div>
+      <div class="day-row"><span class="day-name" id="sh-thu">Jeudi</span><span class="day-time">07h30 – 19h00</span></div>
+      <div class="day-row"><span class="day-name" id="sh-fri">Vendredi</span><span class="day-time">07h30 – 19h00</span></div>
+      <div class="day-row"><span class="day-name" id="sh-sat">Samedi</span><span class="day-time">07h30 – 12h30</span></div>
+      <div class="day-row"><span class="day-name" id="sh-sun">Dimanche</span><span class="day-closed" id="sh-closed">Fermé</span></div>
+    </div>
+    <!-- GARDE schedule — visible when garde = true -->
+    <div class="glass schedule-card" id="hours-garde-block" style="display:none;">
+      <h3>🚨 <span id="sh-guard-title">Semaine de garde</span></h3>
+      <div class="day-row"><span class="day-name" id="sg-sat">Samedi</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-sun">Dimanche</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-mon">Lundi</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-tue">Mardi</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-wed">Mercredi</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-thu">Jeudi</span><span class="day-24">24h/24</span></div>
+      <div class="day-row"><span class="day-name" id="sg-fri">Vendredi</span><span class="day-24">24h/24</span></div>
+    </div>
+  </div>
+  <!-- ── MÉDICAMENTS ── -->
+  <div class="tab-content" id="content-meds">
+    <div class="glass" style="padding:24px;">
+      <h2 style="font-size:1.1rem;font-weight:800;color:var(--txt);margin-bottom:16px;" id="med-title">Rechercher un médicament</h2>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="med-search" placeholder="Tapez le nom du médicament..." oninput="filterMeds()">
+      </div>
+      <div class="med-table-wrap" style="margin-top:12px;">
+        <table>
+          <thead>
+            <tr>
+              <th id="col-name">Nom</th>
+              <th id="col-price">Prix / Disponibilité</th>
+            </tr>
+          </thead>
+          <tbody id="med-tbody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:0.75rem;color:var(--sub);margin-top:12px;" id="med-count-label"></p>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <div class="tab-content" id="content-services">
+    <div class="glass" style="padding:24px;margin-bottom:16px;">
+      <h2 style="font-size:1.1rem;font-weight:800;color:var(--txt);margin-bottom:6px;" id="svc-title">Nos Services</h2>
+      <p style="font-size:0.82rem;color:var(--sub);margin-bottom:20px;" id="svc-sub">Une gamme complète de services pharmaceutiques pour prendre soin de vous et votre famille.</p>
+      <div class="services-grid">
+        <div class="glass service-item"><div class="service-icon">💊</div><div><h4 id="sv1-title">Médicaments & Prescriptions</h4><p id="sv1-desc">Délivrance de médicaments sur ordonnance et en vente libre. Conseil personnalisé pour chaque patient.</p></div></div>
+        <div class="glass service-item"><div class="service-icon">🩺</div><div><h4 id="sv2-title">Conseil Pharmaceutique</h4><p id="sv2-desc">Conseils de santé, orientation vers les spécialistes, suivi thérapeutique et gestion des traitements.</p></div></div>
+        <div class="glass service-item"><div class="service-icon">🩹</div><div><h4 id="sv3-title">Matériel Médical</h4><p id="sv3-desc">Vente de matériel de soins, pansements, bandages et équipements médicaux courants.</p></div></div>
+        <div class="glass service-item"><div class="service-icon">👶</div><div><h4 id="sv4-title">Puériculture & Pédiatrie</h4><p id="sv4-desc">Produits pour bébés, laits infantiles, soins pédiatriques et conseils aux jeunes parents.</p></div></div>
+      </div>
+    </div>
+    <!-- About section inside services -->
+    <div class="glass" style="padding:24px;">
+      <h2 style="font-size:1.1rem;font-weight:800;color:var(--txt);margin-bottom:16px;" id="about-title">À propos de notre pharmacie</h2>
+      <div class="about-grid">
+        <div class="glass about-logo-card">
+          <img src="data:image/png;base64,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5KQSSAXb+WeQ4gFXDBfVlZPOEHxGqzmlyWNujq9B0jBnSuAzO6eBVjwX1ZWTzhB8Rqirnhn2f78kFesO9Ront/Zchn2B4FyuGfYHgXKnk2FqTYERFkyEREAREQBERAEREAREQBERAEREBwdxVN0x9cy9eOb8Nqtmo5xPoiw/f77VXirr7pHPUuDntikjDQQANWbCd7hUfcKZ9RGjWETd6OSqiRse3ErdSV9dSMLKWsqIGuOZEchaCfQvt0avHdWu5d3zU87RWF+6d55WL9tNorC/dK88rF+2opLZVJqRf2QKWWtRMEX9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/ZnQ9dx/ZA3Rq8d1a7l3fNOjV47q13Lu+annaKwv3SvPKxftptFYX7pXnlYv200bVcf2ND13H9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/Y0PXcf2QN0avHdWu5d3zTo1eO6tdy7vmp52isL90rzysX7abRWF+6V55WL9tNG1XH9jQ9dx/ZAVTcrjVRc6qa+qmjzz2L5S4Z+AlZmC+rGyecIPiNU47RWF+6d55WL9tZNq0K4bt9zpa+K4XZ0lNMyZjXSx7ElrgRnkzc1LLbZUZaOd/Zlllq84jnYavck5n2B4FygGQARWRC4oEREMhERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf//Z" alt="Logo">
+          <h3>Phcie du Carrefour Labia</h3>
+          <p>Dr. Bamba Aboubacary</p>
+        </div>
+        <div class="about-info">
+          <p id="about-p1">La <strong>Pharmacie du Carrefour Labia</strong> est dirigée par le <strong>Pharmacien Bamba Aboubacary</strong>, pharmacien diplômé et passionné par la santé communautaire. Notre équipe s'engage à fournir des soins pharmaceutiques de haute qualité, accessibles à tous.</p>
+          <p id="about-p2">Nous mettons un point d'honneur à accueillir chaque patient avec bienveillance, à délivrer des médicaments conformes aux normes en vigueur et à assurer un suivi thérapeutique personnalisé.</p>
+          <div class="about-chips">
+            <span class="chip" id="ch1">✓ Pharmacien diplômé</span>
+            <span class="chip" id="ch2">✓ Équipe professionnelle</span>
+            <span class="chip" id="ch3">✓ Conseil personnalisé</span>
+            <span class="chip" id="ch4">✓ Garde 7j/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="tab-content" id="content-contact">
+    <div class="contact-info-grid">
+      <div class="glass contact-info-card">
+        <div class="ci-icon">📞</div>
+        <h4 id="ci-phone-h">Téléphone</h4>
+        <a href="tel:+2250748436938">+225 074-843-6938</a>
+        <a href="tel:+2250748436938" style="color:var(--g1);font-weight:600;font-size:0.78rem;margin-top:4px;" id="ci-call">Appeler maintenant →</a>
+      </div>
+      <div class="glass contact-info-card">
+        <div class="ci-icon">⏰</div>
+        <h4 id="ci-hours-h">Horaires d'ouverture</h4>
+        <p id="ci-hours-txt">Lun–Sam : 07h30–19h00</p>
+        <p id="ci-guard-txt" style="font-size:0.75rem;margin-top:4px;">Garde : Lun–Dim 24h/24</p>
+      </div>
+      <div class="glass contact-info-card">
+        <div class="ci-icon">📍</div>
+        <h4 id="ci-addr-h">Adresse</h4>
+        <p>Pharmacie Carrefour Labia</p>
+        <p>Carrefour Labia, Daloa</p>
+        <p id="ci-doc">Dr. Bamba Aboubacary</p>
+      </div>
+    </div>
+    <!-- Map -->
+    <a href="https://www.google.com/maps/search/Pharmacie+Carrefour+Labia+Daloa" target="_blank" class="glass map-container map-placeholder">
+      <span>🗺️</span>
+      <p id="map-label">Voir sur Google Maps — Carrefour Labia, Daloa</p>
+    </a>
+    <!-- Contact form -->
+    <div class="glass" style="padding:24px;margin-top:16px;">
+      <h3 style="font-size:1rem;font-weight:800;color:var(--txt);margin-bottom:16px;" id="form-title">Envoyez-nous un message</h3>
+      <form id="contact-form" onsubmit="submitContact(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label id="lbl-name">Nom <span class="req">*</span></label>
+            <input type="text" id="cf-name" required placeholder="Votre nom complet">
+          </div>
+          <div class="form-group">
+            <label id="lbl-phone">Téléphone <span class="req">*</span></label>
+            <input type="tel" id="cf-phone" required placeholder="+225 0X XX XX XX XX">
+          </div>
+          <div class="form-group full">
+            <label id="lbl-subject">Objet <span class="req">*</span></label>
+            <select id="cf-subject" required>
+              <option value="" disabled selected id="sel-def">-- Choisissez --</option>
+              <option value="medicament" id="sel-med">Demande de médicament</option>
+              <option value="conseil" id="sel-conseil">Conseil pharmaceutique</option>
+              <option value="renseignement" id="sel-rens">Renseignement</option>
+              <option value="autre" id="sel-autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label id="lbl-msg">Message <span class="req">*</span></label>
+            <textarea id="cf-msg" required placeholder="Décrivez votre demande..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit" id="btn-send">Envoyer le message ✉️</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── DEMANDES (pharmacien only) ── -->
+  <div class="tab-content" id="content-demands">
+    <div class="glass pharma-panel">
+      <h2 id="dem-title">📬 Demandes reçues</h2>
+      <p id="dem-sub">Messages envoyés par les clients via le formulaire de contact.</p>
+      <div class="demands-section">
+        <div id="demands-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ESPACE PHARMACIEN ── -->
+  <div class="tab-content" id="content-pharma">
+    <div class="glass pharma-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px;">
+        <h2 id="pp-title">Espace Pharmacien</h2>
+        <button class="btn-pill" onclick="logoutPharma()" id="pp-logout">Déconnexion</button>
+      </div>
+      <p id="pp-sub">Gérez le mode garde et les paramètres de la pharmacie.</p>
+
+      <!-- GARDE TOGGLE -->
+      <div class="glass status-toggle" style="margin-top:16px;">
+        <div>
+          <div class="toggle-label" id="toggle-lbl">Mode Garde 24h/24</div>
+          <div class="toggle-desc" id="toggle-desc">Activez quand vous êtes de garde</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="garde-toggle" onchange="onGardeChange(this.checked)">
+          <div class="toggle-track"></div>
+          <div class="toggle-thumb"></div>
+        </label>
+      </div>
+      <div id="mode-info-box" class="mode-info mode-inactive" style="margin-bottom:16px;">
+        <span id="mode-info-txt">🔵 Mode normal — Horaires habituels actifs</span>
+      </div>
+
+      <!-- STOCK IMPORT SECTION -->
+      <div class="glass" style="padding:20px;margin-bottom:16px;">
+        <h3 style="font-size:0.9rem;font-weight:700;color:var(--txt);margin-bottom:12px;" id="imp-title">📥 Importer le stock</h3>
+        <p style="font-size:0.78rem;color:var(--sub);margin-bottom:12px;" id="imp-desc">Importez un fichier Excel (.xlsx/.csv) avec les colonnes : Nom, Prix, Quantité</p>
+        <div id="drop-zone" onclick="document.getElementById('stock-file').click()"
+          style="border:2px dashed rgba(22,163,74,0.35);border-radius:14px;padding:28px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(22,163,74,0.04);"
+          ondragover="event.preventDefault();this.style.borderColor='var(--g1)'" 
+          ondragleave="this.style.borderColor=''"
+          ondrop="onFileDrop(event)">
+          <div style="font-size:2rem;margin-bottom:8px;">📊</div>
+          <p style="font-size:0.85rem;color:var(--sub);" id="dz-txt"><strong style="color:var(--g1)">Glissez votre fichier</strong> ou cliquez pour sélectionner</p>
+        </div>
+        <input type="file" id="stock-file" accept=".xlsx,.xls,.csv" style="display:none" onchange="importStockFile(this)">
+        <div id="import-msg" style="margin-top:10px;font-size:0.82rem;display:none;"></div>
+      </div>
+
+      <!-- STOCK TABLE -->
+      <div class="glass" style="padding:20px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+          <h3 style="font-size:0.9rem;font-weight:700;color:var(--txt);" id="stock-tbl-title">📋 Inventaire</h3>
+          <button onclick="exportToExcel()" class="btn-pill" style="font-size:0.75rem;padding:6px 14px;" id="btn-export">📤 Exporter Excel</button>
+        </div>
+        <div class="med-table-wrap">
+          <table>
+            <thead><tr>
+              <th id="sth-name">Nom</th>
+              <th id="sth-price">Prix</th>
+              <th id="sth-qty">Qté</th>
+              <th id="sth-dispo">Disponible</th>
+              <th id="sth-act">Action</th>
+            </tr></thead>
+            <tbody id="stock-admin-tbody"></tbody>
+          </table>
+        </div>
+        <button onclick="openAddMed()" class="btn-submit" style="margin-top:12px;padding:10px 22px;font-size:0.82rem;" id="btn-add-med">+ Ajouter un médicament</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Phcie du Carrefour Labia</strong> — Dr. Bamba Aboubacary · <span id="ft-rights">Tous droits réservés</span></p>
+  <p style="margin-top:4px;">Site fait par <a href="mailto:irfanebamba77@gmail.com" style="color:var(--g1);text-decoration:none;">irfanebamba77@gmail.com</a></p>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toast-icon">✅</span> <span id="toast-msg">OK</span></div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal-box" style="position:relative;">
+    <button class="modal-close-btn" onclick="closeLogin()">✕</button>
+    <div class="modal-logo"><img src="data:image/png;base64,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5KQSSAXb+WeQ4gFXDBfVlZPOEHxGqzmlyWNujq9B0jBnSuAzO6eBVjwX1ZWTzhB8Rqirnhn2f78kFesO9Ront/Zchn2B4FyuGfYHgXKnk2FqTYERFkyEREAREQBERAEREAREQBERAEREBwdxVN0x9cy9eOb8Nqtmo5xPoiw/f77VXirr7pHPUuDntikjDQQANWbCd7hUfcKZ9RGjWETd6OSqiRse3ErdSV9dSMLKWsqIGuOZEchaCfQvt0avHdWu5d3zU87RWF+6d55WL9tNorC/dK88rF+2opLZVJqRf2QKWWtRMEX9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/ZnQ9dx/ZA3Rq8d1a7l3fNOjV47q13Lu+annaKwv3SvPKxftptFYX7pXnlYv200bVcf2ND13H9kDdGrx3VruXd806NXjurXcu75qedorC/dK88rF+2m0VhfuleeVi/bTRtVx/Y0PXcf2QN0avHdWu5d3zTo1eO6tdy7vmp52isL90rzysX7abRWF+6V55WL9tNG1XH9jQ9dx/ZAVTcrjVRc6qa+qmjzz2L5S4Z+AlZmC+rGyecIPiNU47RWF+6d55WL9tZNq0K4bt9zpa+K4XZ0lNMyZjXSx7ElrgRnkzc1LLbZUZaOd/Zlllq84jnYavck5n2B4FygGQARWRC4oEREMhERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf//Z" alt="Logo" style="width:60px;height:60px;object-fit:contain;"></div>
+    <h3 id="ml-title">Connexion Pharmacien</h3>
+    <p class="modal-sub" id="ml-sub">Accès réservé au personnel autorisé</p>
+    <div class="modal-form-group">
+      <label id="ml-lbl-code">Code d'accès</label>
+      <input type="password" id="pharma-code" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <p class="modal-err" id="login-err" id="ml-err">Code incorrect. Réessayez.</p>
+    <button class="btn-modal-submit" onclick="doLogin()" id="ml-btn">Se connecter</button>
+  </div>
+</div>
+
+<!-- ADD/EDIT MED MODAL -->
+<div class="modal-overlay" id="med-modal">
+  <div class="modal-box" style="position:relative;max-width:420px;">
+    <button class="modal-close-btn" onclick="closeMedModal()">✕</button>
+    <h3 style="margin-bottom:16px;" id="med-modal-title">Ajouter un médicament</h3>
+    <div class="modal-form-group"><label>Nom *</label><input type="text" id="mm-name" placeholder="ex: Paracétamol 500mg"></div>
+    <div class="modal-form-group"><label>Prix (FCFA)</label><input type="text" id="mm-price" placeholder="ex: 500 FCFA"></div>
+    <div class="modal-form-group"><label>Quantité</label><input type="number" id="mm-qty" placeholder="ex: 50" min="0"></div>
+    <div style="display:flex;gap:10px;margin-top:8px;">
+      <button onclick="closeMedModal()" style="flex:1;padding:11px;border-radius:12px;border:2px solid var(--gb);background:var(--inp);color:var(--txt);cursor:pointer;font-size:0.88rem;" id="mm-cancel">Annuler</button>
+      <button onclick="saveMed()" style="flex:2;padding:11px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--g1),#059669);color:#fff;font-weight:700;cursor:pointer;font-size:0.88rem;" id="mm-save">Enregistrer</button>
+    </div>
+    <input type="hidden" id="mm-index">
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════
+   CONSTANTS
+══════════════════════════ */
+const ACCESS_CODE = "SARADIA75";
+const LOGO_B64 = "/9j/4AAQSkZJRgABAQAA..."; // internal ref
+
+/* ══════════════════════════
+   STATE
+══════════════════════════ */
+let lang = localStorage.getItem("lang") || "fr";
+let dark = localStorage.getItem("dark") === "true";
+let garde = JSON.parse(localStorage.getItem("garde") || "false");
+let isPharma = false;
+let meds = JSON.parse(localStorage.getItem("meds") || "null") || [
+  {nom:"Paracétamol 500mg", price:"500 FCFA", qty:150},
+  {nom:"Amoxicilline 500mg", price:"1500 FCFA", qty:45},
+  {nom:"Ibuprofène 400mg", price:"750 FCFA", qty:80},
+  {nom:"Oméprazole 20mg", price:"1200 FCFA", qty:30},
+  {nom:"Métronidazole 250mg", price:"800 FCFA", qty:60},
+  {nom:"Vitamine C 1000mg", price:"600 FCFA", qty:120},
+  {nom:"Doliprane 1000mg", price:"700 FCFA", qty:90},
+  {nom:"Ciprofloxacine 500mg", price:"2000 FCFA", qty:25},
+  {nom:"Loratadine 10mg", price:"900 FCFA", qty:55},
+  {nom:"Artéméther/Luméfantrine", price:"3500 FCFA", qty:40},
+  {nom:"Cotrimoxazole 480mg", price:"600 FCFA", qty:35},
+  {nom:"Albendazole 400mg", price:"500 FCFA", qty:50},
+  {nom:"Zinc 20mg", price:"400 FCFA", qty:70},
+  {nom:"Sels de réhydratation", price:"300 FCFA", qty:100},
+  {nom:"Bétadine solution", price:"800 FCFA", qty:50},
+  {nom:"Salbutamol 2mg", price:"1100 FCFA", qty:8},
+  {nom:"Prednisolone 5mg", price:"900 FCFA", qty:3},
+  {nom:"Furosémide 40mg", price:"700 FCFA", qty:5},
+  {nom:"Smecta", price:"650 FCFA", qty:60},
+  {nom:"Quinine 300mg", price:"1200 FCFA", qty:0},
+];
+let demands = JSON.parse(localStorage.getItem("demands") || "[]");
+let editingMed = -1;
+
+/* ══════════════════════════
+   TRANSLATIONS
+══════════════════════════ */
+const TR = {
+fr:{
+  nav_tagline:"Votre santé, notre priorité",
+  hero_badge:"Pharmacie communautaire",
+  hero_sub:"Sous la direction du <strong>Pharmacien Bamba Aboubacary</strong> — Des soins pharmaceutiques de qualité à votre service, accessibles à tous.",
+  cta_meds:"Nos médicaments", cta_contact:"Nous contacter",
+  t_hours:"⏰ Horaires", t_meds:"💊 Médicaments", t_services:"🏥 Services",
+  t_contact:"📞 Contact", t_demands:"📬 Demandes", t_pharma:"⚙️ Pharmacien",
+  sh_normal:"Semaine normale", sh_guard:"Semaine de garde",
+  sh_mon:"Lundi", sh_tue:"Mardi", sh_wed:"Mercredi", sh_thu:"Jeudi",
+  sh_fri:"Vendredi", sh_sat:"Samedi", sh_sun:"Dimanche", sh_closed:"Fermé",
+  sh_note:"📌 Le mode garde s'active depuis le compte pharmacien. Pendant la garde, la pharmacie est ouverte 24h/24.",
+  status_garde_on:"🟢 Mode GARDE actif — Ouvert 24h/24",
+  status_garde_off:"🔵 Mode normal — Lun-Sam 07h30–19h00",
+  med_title:"Rechercher un médicament",
+  col_name:"Nom", col_price:"Prix", col_dispo:"Dispo.",
+  svc_title:"Nos Services",
+  svc_sub:"Une gamme complète de services pharmaceutiques pour prendre soin de vous et votre famille.",
+  sv1t:"Médicaments & Prescriptions", sv1d:"Délivrance de médicaments sur ordonnance et en vente libre. Conseil personnalisé pour chaque patient.",
+  sv2t:"Conseil Pharmaceutique", sv2d:"Conseils de santé, orientation vers les spécialistes, suivi thérapeutique et gestion des traitements.",
+  sv3t:"Matériel Médical", sv3d:"Vente de matériel de soins, pansements, bandages et équipements médicaux courants.",
+  sv4t:"Puériculture & Pédiatrie", sv4d:"Produits pour bébés, laits infantiles, soins pédiatriques et conseils aux jeunes parents.",
+  about_title:"À propos de notre pharmacie",
+  about_p1:"La <strong>Pharmacie du Carrefour Labia</strong> est dirigée par le <strong>Pharmacien Bamba Aboubacary</strong>, pharmacien diplômé et passionné par la santé communautaire. Notre équipe s'engage à fournir des soins pharmaceutiques de haute qualité, accessibles à tous.",
+  about_p2:"Nous mettons un point d'honneur à accueillir chaque patient avec bienveillance, à délivrer des médicaments conformes aux normes en vigueur et à assurer un suivi thérapeutique personnalisé.",
+  ch1:"✓ Pharmacien diplômé", ch2:"✓ Équipe professionnelle", ch3:"✓ Conseil personnalisé", ch4:"✓ Garde 7j/7",
+  ci_phone:"Téléphone", ci_hours:"Horaires d'ouverture", ci_addr:"Adresse",
+  ci_hours_txt:"Lun–Sam : 07h30–19h00", ci_guard_txt:"Garde : Lun–Dim 24h/24", ci_call:"Appeler maintenant →",
+  ci_doc:"Dr. Bamba Aboubacary", map_label:"Voir sur Google Maps — Carrefour Labia, Daloa",
+  form_title:"Envoyez-nous un message",
+  lbl_name:"Nom", lbl_phone:"Téléphone", lbl_subject:"Objet", lbl_msg:"Message",
+  sel_def:"-- Choisissez --", sel_med:"Demande de médicament", sel_conseil:"Conseil pharmaceutique",
+  sel_rens:"Renseignement", sel_autre:"Autre",
+  btn_send:"Envoyer le message ✉️",
+  dem_title:"📬 Demandes reçues", dem_sub:"Messages envoyés par les clients via le formulaire de contact.",
+  pp_title:"Espace Pharmacien", pp_logout:"Déconnexion", pp_sub:"Gérez le mode garde et les paramètres de la pharmacie.",
+  toggle_lbl:"Mode Garde 24h/24", toggle_desc:"Activez quand vous êtes de garde",
+  mode_on:"🟢 Mode GARDE actif — Pharmacie ouverte 24h/24",
+  mode_off:"🔵 Mode normal — Horaires habituels actifs",
+  imp_title:"📥 Importer le stock", imp_desc:"Importez un fichier Excel (.xlsx/.csv) avec les colonnes : Nom, Prix, Quantité",
+  dz_txt:"<strong style='color:var(--g1)'>Glissez votre fichier</strong> ou cliquez pour sélectionner",
+  stock_tbl:"📋 Inventaire", btn_export:"📤 Exporter Excel", btn_add:"+ Ajouter un médicament",
+  sth_name:"Nom", sth_price:"Prix", sth_qty:"Qté", sth_dispo:"Disponible", sth_act:"Action",
+  ml_title:"Connexion Pharmacien", ml_sub:"Accès réservé au personnel autorisé", ml_lbl:"Code d'accès", ml_btn:"Se connecter",
+  login_btn:"Pharmacien", garde_label:"Garde 24h/24",
+  hours_bar:"Lun–Sam : 07h30–19h00", guard_bar:"Garde : Lun–Dim 24h/24 (semaine de garde)",
+  ft_rights:"Tous droits réservés",
+  toast_sent:"Message envoyé ! Nous vous contacterons bientôt.",
+  toast_login:"Connexion réussie ✅", toast_logout:"Déconnecté",
+  toast_garde_on:"Mode garde activé 🟢", toast_garde_off:"Mode garde désactivé",
+  toast_imported:"Stock importé avec succès ✅",
+  toast_med_saved:"Médicament enregistré ✅", toast_med_del:"Médicament supprimé",
+  mm_add:"Ajouter un médicament", mm_edit:"Modifier le médicament",
+  mm_cancel:"Annuler", mm_save:"Enregistrer",
+  med_count:n => n+" médicament"+(n>1?"s":"")+" trouvé"+(n>1?"s":""),
+  yes:"Oui", no:"Non",
+},
+en:{
+  nav_tagline:"Your health, our priority",
+  hero_badge:"Community pharmacy",
+  hero_sub:"Under the direction of <strong>Pharmacist Bamba Aboubacary</strong> — Quality pharmaceutical care at your service, accessible to all.",
+  cta_meds:"Our medications", cta_contact:"Contact us",
+  t_hours:"⏰ Hours", t_meds:"💊 Medications", t_services:"🏥 Services",
+  t_contact:"📞 Contact", t_demands:"📬 Requests", t_pharma:"⚙️ Pharmacist",
+  sh_normal:"Normal week", sh_guard:"On-call week",
+  sh_mon:"Monday", sh_tue:"Tuesday", sh_wed:"Wednesday", sh_thu:"Thursday",
+  sh_fri:"Friday", sh_sat:"Saturday", sh_sun:"Sunday", sh_closed:"Closed",
+  sh_note:"📌 On-call mode is activated from the pharmacist account. During on-call duty, the pharmacy is open 24/7.",
+  status_garde_on:"🟢 ON-CALL mode active — Open 24/7",
+  status_garde_off:"🔵 Normal mode — Mon-Sat 07:30–19:00",
+  med_title:"Search for a medication",
+  col_name:"Name", col_price:"Price", col_dispo:"Available",
+  svc_title:"Our Services",
+  svc_sub:"A full range of pharmaceutical services to care for you and your family.",
+  sv1t:"Medications & Prescriptions", sv1d:"Dispensing prescription and over-the-counter medications. Personalized advice for each patient.",
+  sv2t:"Pharmaceutical Advice", sv2d:"Health advice, specialist referrals, therapeutic monitoring and treatment management.",
+  sv3t:"Medical Equipment", sv3d:"Sale of care materials, dressings, bandages and common medical equipment.",
+  sv4t:"Childcare & Pediatrics", sv4d:"Baby products, infant formula, pediatric care and advice for young parents.",
+  about_title:"About our pharmacy",
+  about_p1:"<strong>Pharmacie du Carrefour Labia</strong> is led by <strong>Pharmacist Bamba Aboubacary</strong>, a qualified pharmacist passionate about community health. Our team is committed to providing high-quality pharmaceutical care, accessible to all.",
+  about_p2:"We take pride in welcoming each patient with kindness, dispensing medications that meet current standards, and ensuring personalized therapeutic follow-up.",
+  ch1:"✓ Qualified pharmacist", ch2:"✓ Professional team", ch3:"✓ Personalized advice", ch4:"✓ 24/7 duty",
+  ci_phone:"Phone", ci_hours:"Opening hours", ci_addr:"Address",
+  ci_hours_txt:"Mon–Sat: 07:30–19:00", ci_guard_txt:"On-call: Mon–Sun 24/7", ci_call:"Call now →",
+  ci_doc:"Dr. Bamba Aboubacary", map_label:"View on Google Maps — Carrefour Labia, Daloa",
+  form_title:"Send us a message",
+  lbl_name:"Name", lbl_phone:"Phone", lbl_subject:"Subject", lbl_msg:"Message",
+  sel_def:"-- Choose --", sel_med:"Medication request", sel_conseil:"Pharmaceutical advice",
+  sel_rens:"Information", sel_autre:"Other",
+  btn_send:"Send message ✉️",
+  dem_title:"📬 Received requests", dem_sub:"Messages sent by clients via the contact form.",
+  pp_title:"Pharmacist Space", pp_logout:"Logout", pp_sub:"Manage on-call mode and pharmacy settings.",
+  toggle_lbl:"On-call 24/7 mode", toggle_desc:"Activate when you are on duty",
+  mode_on:"🟢 ON-CALL mode active — Pharmacy open 24/7",
+  mode_off:"🔵 Normal mode — Regular hours active",
+  imp_title:"📥 Import stock", imp_desc:"Import an Excel file (.xlsx/.csv) with columns: Name, Price, Quantity",
+  dz_txt:"<strong style='color:var(--g1)'>Drag your file</strong> or click to select",
+  stock_tbl:"📋 Inventory", btn_export:"📤 Export Excel", btn_add:"+ Add medication",
+  sth_name:"Name", sth_price:"Price", sth_qty:"Qty", sth_dispo:"Available", sth_act:"Action",
+  ml_title:"Pharmacist Login", ml_sub:"Access reserved for authorized staff", ml_lbl:"Access code", ml_btn:"Log in",
+  login_btn:"Pharmacist", garde_label:"On-call 24/7",
+  hours_bar:"Mon–Sat: 07:30–19:00", guard_bar:"On-call: Mon–Sun 24/7 (on-call week)",
+  ft_rights:"All rights reserved",
+  toast_sent:"Message sent! We will contact you soon.",
+  toast_login:"Login successful ✅", toast_logout:"Logged out",
+  toast_garde_on:"On-call mode activated 🟢", toast_garde_off:"On-call mode deactivated",
+  toast_imported:"Stock imported successfully ✅",
+  toast_med_saved:"Medication saved ✅", toast_med_del:"Medication deleted",
+  mm_add:"Add medication", mm_edit:"Edit medication",
+  mm_cancel:"Cancel", mm_save:"Save",
+  med_count:n => n+" medication"+(n>1?"s":"")+" found",
+  yes:"Yes", no:"No",
+}};
+
+function t(k,...args){ const d=(TR[lang]||TR.fr); const v=d[k]; if(typeof v==="function") return v(...args); return v||k; }
+
+/* ══════════════════════════
+   THEME & LANG
+══════════════════════════ */
+function applyDark(){
+  document.documentElement.classList.toggle("dark",dark);
+  document.getElementById("btn-dark").textContent = dark ? "☀️" : "🌙";
+}
+function toggleDark(){ dark=!dark; localStorage.setItem("dark",dark); applyDark(); }
+function toggleLang(){ lang=lang==="fr"?"en":"fr"; localStorage.setItem("lang",lang); applyTranslations(); }
+
+function applyTranslations(){
+  const elems = {
+    "nav-tagline":"nav_tagline","hero-badge-txt":"hero_badge",
+    "cta-meds":"cta_meds","cta-contact":"cta_contact",
+    "t-hours":"t_hours","t-meds":"t_meds","t-services":"t_services",
+    "t-contact":"t_contact","t-demands":"t_demands","t-pharma":"t_pharma",
+    "sh-normal-title":"sh_normal","sh-guard-title":"sh_guard",
+    "sh-mon":"sh_mon","sh-tue":"sh_tue","sh-wed":"sh_wed","sh-thu":"sh_thu",
+    "sh-fri":"sh_fri","sh-sat":"sh_sat","sh-sun":"sh_sun","sh-closed":"sh_closed",
+    "sh-note":"sh_note",
+    "med-title":"med_title","col-name":"col_name","col-price":"col_price",
+    "svc-title":"svc_title","svc-sub":"svc_sub",
+    "sv1-title":"sv1t","sv1-desc":"sv1d","sv2-title":"sv2t","sv2-desc":"sv2d",
+    "sv3-title":"sv3t","sv3-desc":"sv3d","sv4-title":"sv4t","sv4-desc":"sv4d",
+    "about-title":"about_title","ch1":"ch1","ch2":"ch2","ch3":"ch3","ch4":"ch4",
+    "ci-phone-h":"ci_phone","ci-hours-h":"ci_hours","ci-addr-h":"ci_addr",
+    "ci-hours-txt":"ci_hours_txt","ci-guard-txt":"ci_guard_txt","ci-call":"ci_call",
+    "ci-doc":"ci_doc","map-label":"map_label","form-title":"form_title",
+    "lbl-name":"lbl_name","lbl-phone":"lbl_phone","lbl-subject":"lbl_subject","lbl-msg":"lbl_msg",
+    "btn-send":"btn_send",
+    "dem-title":"dem_title","dem-sub":"dem_sub",
+    "pp-title":"pp_title","pp-logout":"pp_logout","pp-sub":"pp_sub",
+    "toggle-lbl":"toggle_lbl","toggle-desc":"toggle_desc",
+    "imp-title":"imp_title","imp-desc":"imp_desc","dz-txt":"dz_txt",
+    "stock-tbl-title":"stock_tbl","btn-export":"btn_export","btn-add-med":"btn_add",
+    "sth-name":"sth_name","sth-price":"sth_price","sth-qty":"sth_qty",
+    "sth-dispo":"sth_dispo","sth-act":"sth_act",
+    "ml-title":"ml_title","ml-sub":"ml_sub","ml-lbl-code":"ml_lbl","ml-btn":"ml_btn",
+    "login-btn-label":"login_btn","garde-label-nav":"garde_label",
+    "hours-bar":"hours_bar","guard-bar":"guard_bar","ft-rights":"ft_rights",
+    "mm-cancel":"mm_cancel","mm-save":"mm_save",
+  };
+  for(const[id,key] of Object.entries(elems)){
+    const el=document.getElementById(id);
+    if(el){ const v=t(key); if(v!==undefined) el.innerHTML=v; }
+  }
+  // hero sub has HTML
+  const hs=document.getElementById("hero-sub"); if(hs) hs.innerHTML=t("hero_sub");
+  const ap1=document.getElementById("about-p1"); if(ap1) ap1.innerHTML=t("about_p1");
+  const dzt=document.getElementById("dz-txt"); if(dzt) dzt.innerHTML=t("dz_txt");
+  document.getElementById("btn-lang").textContent = lang==="fr"?"EN":"FR";
+  // Update select options
+  const sel=document.getElementById("cf-subject");
+  if(sel){
+    sel.options[0].text=t("sel_def");
+    sel.options[1].text=t("sel_med");
+    sel.options[2].text=t("sel_conseil");
+    sel.options[3].text=t("sel_rens");
+    sel.options[4].text=t("sel_autre");
+  }
+  renderMeds(); renderAdminStock();
+  updateStatusDisplay();
+}
+
+/* ══════════════════════════
+   TABS
+══════════════════════════ */
+function switchTab(id){
+  document.querySelectorAll(".tab-content").forEach(el=>el.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(el=>el.classList.remove("active"));
+  document.getElementById("content-"+id).classList.add("active");
+  document.getElementById("tab-"+id).classList.add("active");
+  if(id==="meds") filterMeds();
+  if(id==="demands") renderDemands();
+  if(id==="pharma") renderAdminStock();
+}
+
+/* ══════════════════════════
+   GARDE / STATUS
+══════════════════════════ */
+function onGardeChange(v){
+  garde=v; localStorage.setItem("garde",JSON.stringify(garde));
+  updateStatusDisplay();
+  updateGardeIndicators();
+  showToast(garde ? t("toast_garde_on") : t("toast_garde_off"), !garde);
+}
+function updateStatusDisplay(){
+  const icon=document.getElementById("status-icon");
+  const title=document.getElementById("status-title");
+  const desc=document.getElementById("status-desc");
+  const mib=document.getElementById("mode-info-box");
+  const mit=document.getElementById("mode-info-txt");
+  const normalBlock=document.getElementById("hours-normal-block");
+  const gardeBlock=document.getElementById("hours-garde-block");
+  if(garde){
+    if(icon) icon.textContent="🟢";
+    if(title) title.textContent="Statut actuel";
+    if(desc) desc.textContent=t("status_garde_on");
+    if(mib){mib.className="mode-info mode-active";}
+    if(mit) mit.innerHTML=t("mode_on");
+    if(normalBlock) normalBlock.style.display="none";
+    if(gardeBlock)  gardeBlock.style.display="";
+  } else {
+    if(icon) icon.textContent="🔵";
+    if(title) title.textContent="Statut actuel";
+    if(desc) desc.textContent=t("status_garde_off");
+    if(mib){mib.className="mode-info mode-inactive";}
+    if(mit) mit.innerHTML=t("mode_off");
+    if(normalBlock) normalBlock.style.display="";
+    if(gardeBlock)  gardeBlock.style.display="none";
+  }
+}
+function updateGardeIndicators(){
+  const badge=document.getElementById("garde-badge-nav");
+  if(garde){
+    badge.style.display="inline-flex";
+  } else {
+    badge.style.display="none";
+  }
+}
+
+/* ══════════════════════════
+   MEDS
+══════════════════════════ */
+function renderMeds(filter=""){
+  const tbody=document.getElementById("med-tbody");
+  const q=(filter||"").toLowerCase();
+  const list=q ? meds.filter(m=>m.nom.toLowerCase().includes(q)) : meds;
+  if(!list.length){
+    const emptyMsg=lang==="en"
+      ? `<div style="text-align:center;padding:28px 16px;">
+           <div style="font-size:2rem;margin-bottom:8px;">💊</div>
+           <p style="font-weight:600;color:var(--txt);margin-bottom:6px;">Médicament non trouvé</p>
+           <p style="color:var(--sub);font-size:0.84rem;">Ce médicament n'est peut-être pas en stock actuellement.<br>
+           <strong style="color:var(--g1)">Faites une demande dans la section Contact et nous nous en chargerons.</strong></p>
+         </div>`
+      : `<div style="text-align:center;padding:28px 16px;">
+           <div style="font-size:2rem;margin-bottom:8px;">💊</div>
+           <p style="font-weight:600;color:var(--txt);margin-bottom:6px;">Médicament non trouvé</p>
+           <p style="color:var(--sub);font-size:0.84rem;">Ce médicament n'est peut-être pas en stock actuellement.<br>
+           <strong style="color:var(--g1)">Faites une demande dans la section Contact et nous nous en chargerons.</strong></p>
+         </div>`;
+    tbody.innerHTML=`<tr><td colspan="2">${emptyMsg}</td></tr>`;
+    const cl=document.getElementById("med-count-label");
+    if(cl) cl.textContent="";
+    return;
+  }
+  tbody.innerHTML=list.map(m=>{
+    const qty=parseInt(m.qty)||0;
+    const inStock=qty>0;
+    const dispoLabel=inStock?t("yes"):t("no");
+    return `<tr>
+      <td><strong>${escH(m.nom)}</strong></td>
+      <td style="white-space:nowrap;">${escH(m.price||"—")} &nbsp;<span class="${inStock?"badge-yes":"badge-no"}">${dispoLabel}</span></td>
+    </tr>`;
+  }).join("");
+  const cl=document.getElementById("med-count-label");
+  if(cl) cl.textContent=t("med_count",list.length);
+}
+function filterMeds(){ renderMeds(document.getElementById("med-search")?.value||""); }
+function escH(s){return String(s||"").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+/* ══════════════════════════
+   ADMIN STOCK
+══════════════════════════ */
+function renderAdminStock(){
+  const tbody=document.getElementById("stock-admin-tbody");
+  if(!tbody) return;
+  tbody.innerHTML=meds.map((m,i)=>{
+    const qty=parseInt(m.qty)||0;
+    const dispo=qty>0?"Oui":"Non";
+    return `<tr>
+      <td><strong>${escH(m.nom)}</strong></td>
+      <td>${escH(m.price||"—")}</td>
+      <td>${qty}</td>
+      <td><span class="${dispo==="Oui"?"badge-yes":"badge-no"}">${dispo==="Oui"?t("yes"):t("no")}</span></td>
+      <td>
+        <button onclick="editMed(${i})" style="background:none;border:none;cursor:pointer;font-size:16px;padding:4px;border-radius:8px;transition:background 0.2s;" onmouseover="this.style.background='rgba(22,163,74,0.1)'" onmouseout="this.style.background='none'">✏️</button>
+        <button onclick="delMed(${i})" style="background:none;border:none;cursor:pointer;font-size:16px;padding:4px;border-radius:8px;transition:background 0.2s;" onmouseover="this.style.background='rgba(225,29,72,0.1)'" onmouseout="this.style.background='none'">🗑️</button>
+      </td>
+    </tr>`;
+  }).join("");
+}
+function saveMeds(){ localStorage.setItem("meds",JSON.stringify(meds)); }
+
+function openAddMed(){
+  editingMed=-1;
+  document.getElementById("mm-name").value="";
+  document.getElementById("mm-price").value="";
+  document.getElementById("mm-qty").value="";
+  document.getElementById("med-modal-title").textContent=t("mm_add");
+  document.getElementById("med-modal").classList.add("open");
+}
+function editMed(i){
+  editingMed=i;
+  const m=meds[i];
+  document.getElementById("mm-name").value=m.nom;
+  document.getElementById("mm-price").value=m.price||"";
+  document.getElementById("mm-qty").value=m.qty||0;
+  document.getElementById("med-modal-title").textContent=t("mm_edit");
+  document.getElementById("med-modal").classList.add("open");
+}
+function closeMedModal(){ document.getElementById("med-modal").classList.remove("open"); }
+function saveMed(){
+  const nom=document.getElementById("mm-name").value.trim();
+  if(!nom){ showToast("Le nom est requis",true); return; }
+  const m={nom,price:document.getElementById("mm-price").value,qty:parseInt(document.getElementById("mm-qty").value)||0};
+  if(editingMed>=0) meds[editingMed]=m; else meds.push(m);
+  saveMeds(); renderMeds(); renderAdminStock();
+  closeMedModal(); showToast(t("toast_med_saved"));
+}
+function delMed(i){
+  if(!confirm("Supprimer ce médicament ?")) return;
+  meds.splice(i,1); saveMeds(); renderMeds(); renderAdminStock();
+  showToast(t("toast_med_del"),true);
+}
+
+/* ══════════════════════════
+   IMPORT STOCK
+══════════════════════════ */
+function onFileDrop(e){ e.preventDefault(); const f=e.dataTransfer.files[0]; if(f) importStockFile({files:[f]}); }
+function importStockFile(input){
+  const file=input.files[0]; if(!file) return;
+  const msg=document.getElementById("import-msg");
+  const ext=file.name.split(".").pop().toLowerCase();
+  const reader=new FileReader();
+
+  function parseRows(rows){
+    if(rows.length<2){msg.style.display="block";msg.textContent="Fichier vide";return;}
+    const hdr=rows[0].map(h=>String(h||"").toLowerCase().trim());
+    const ni=hdr.findIndex(h=>/nom|name/i.test(h));
+    const pi=hdr.findIndex(h=>/prix|price/i.test(h));
+    const qi=hdr.findIndex(h=>/qt[eé]|quantit|qty|stock/i.test(h));
+    const imported=rows.slice(1).filter(r=>r&&r[ni>=0?ni:0]).map(r=>({
+      nom:String(r[ni>=0?ni:0]||"").trim(),
+      price:String(r[pi>=0?pi:0]||"").trim(),
+      qty:parseInt(r[qi>=0?qi:0])||0
+    })).filter(m=>m.nom);
+    if(imported.length){
+      meds=imported; saveMeds(); renderMeds(); renderAdminStock();
+      msg.style.display="block"; msg.style.color="var(--g1)";
+      msg.textContent="✅ "+imported.length+" médicaments importés";
+      showToast(t("toast_imported"));
+    } else {
+      msg.style.display="block"; msg.style.color="var(--sub)";
+      msg.textContent="⚠️ Aucun médicament trouvé. Vérifiez les colonnes : Nom, Prix, Quantité";
+    }
+  }
+
+  if(ext==="csv"){
+    reader.onload=e=>{
+      const rows=e.target.result.split(/\r?\n/).map(r=>r.split(",").map(c=>c.trim().replace(/^"|"$/g,"")));
+      parseRows(rows);
+    };
+    reader.readAsText(file);
+  } else if(ext==="xlsx"||ext==="xls"){
+    reader.onload=e=>{
+      try{
+        const wb=XLSX.read(new Uint8Array(e.target.result),{type:"array"});
+        const ws=wb.Sheets[wb.SheetNames[0]];
+        const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:""});
+        parseRows(rows);
+      }catch(err){
+        msg.style.display="block"; msg.style.color="#e11d48";
+        msg.textContent="❌ Erreur lecture fichier: "+err.message;
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  } else {
+    msg.style.display="block"; msg.style.color="var(--sub)";
+    msg.textContent="⚠️ Format non supporté. Utilisez .xlsx, .xls ou .csv";
+  }
+}
+
+/* ══════════════════════════
+   EXPORT
+══════════════════════════ */
+function exportToExcel(){
+  const rows=[["Nom","Prix","Quantite","Disponible"],...meds.map(m=>[m.nom,m.price||"",m.qty||0,(parseInt(m.qty)||0)>0?"Oui":"Non"])];
+  const csv=rows.map(r=>r.map(c=>`"${c}"`).join(",")).join("\n");
+  const blob=new Blob([csv],{type:"text/csv"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="stock_labia_"+new Date().toISOString().slice(0,10)+".csv"; a.click();
+}
+
+/* ══════════════════════════
+   CONTACT FORM
+══════════════════════════ */
+function submitContact(e){
+  e.preventDefault();
+  const name=document.getElementById("cf-name").value.trim();
+  const phone=document.getElementById("cf-phone").value.trim();
+  const subject=document.getElementById("cf-subject").value;
+  const msg=document.getElementById("cf-msg").value.trim();
+  if(!name||!phone||!subject||!msg){showToast("Tous les champs obligatoires (*) doivent être remplis.",true);return;}
+  demands.unshift({name,phone,subject,msg,ts:new Date().toLocaleString("fr-FR")});
+  localStorage.setItem("demands",JSON.stringify(demands));
+  document.getElementById("contact-form").reset();
+  showToast(t("toast_sent"));
+}
+
+/* ══════════════════════════
+   DEMANDS
+══════════════════════════ */
+function renderDemands(){
+  const list=document.getElementById("demands-list");
+  if(!list) return;
+  if(!demands.length){
+    list.innerHTML=`<div class="empty-demands"><span>📭</span><p>${lang==="en"?"No requests yet.":"Aucune demande reçue pour le moment."}</p></div>`;
+    return;
+  }
+  const subjectMap={medicament:lang==="en"?"Med. request":"Demande médicament",conseil:lang==="en"?"Advice":"Conseil pharmaceutique",renseignement:lang==="en"?"Info":"Renseignement",autre:lang==="en"?"Other":"Autre"};
+  list.innerHTML=demands.map((d,i)=>`
+    <div class="glass demand-card">
+      <button class="d-del" onclick="delDemand(${i})" title="Supprimer">✕</button>
+      <div class="d-time">📅 ${escH(d.ts)}</div>
+      <div class="d-name">👤 ${escH(d.name)}</div>
+      <div class="d-contact">📞 ${escH(d.phone)}</div>
+      <div class="d-msg">${escH(d.msg)}</div>
+      <span class="d-type">${escH(subjectMap[d.subject]||d.subject)}</span>
+    </div>`).join("");
+}
+function delDemand(i){ demands.splice(i,1); localStorage.setItem("demands",JSON.stringify(demands)); renderDemands(); }
+
+/* ══════════════════════════
+   LOGIN
+══════════════════════════ */
+function openLogin(){ document.getElementById("login-modal").classList.add("open"); setTimeout(()=>document.getElementById("pharma-code").focus(),100); }
+function closeLogin(){ document.getElementById("login-modal").classList.remove("open"); document.getElementById("pharma-code").value=""; document.getElementById("login-err").style.display="none"; }
+function doLogin(){
+  const code=document.getElementById("pharma-code").value.trim();
+  if(code===ACCESS_CODE){
+    isPharma=true; closeLogin();
+    document.getElementById("tab-demands").style.display="";
+    document.getElementById("tab-pharma").style.display="";
+    document.getElementById("btn-pharma-nav").textContent=lang==="en"?"Logout":"Déconnexion";
+    document.getElementById("btn-pharma-nav").onclick=logoutPharma;
+    document.getElementById("garde-toggle").checked=garde;
+    updateStatusDisplay(); updateGardeIndicators();
+    showToast(t("toast_login")); switchTab("pharma");
+  } else {
+    const err=document.getElementById("login-err");
+    err.style.display="block"; err.textContent=lang==="en"?"Incorrect code. Try again.":"Code incorrect. Réessayez.";
+    document.getElementById("pharma-code").style.borderColor="var(--acc)";
+    setTimeout(()=>{document.getElementById("pharma-code").style.borderColor="";},1500);
+  }
+}
+function logoutPharma(){
+  isPharma=false;
+  document.getElementById("tab-demands").style.display="none";
+  document.getElementById("tab-pharma").style.display="none";
+  document.getElementById("btn-pharma-nav").innerHTML=`<span id="login-btn-label">${t("login_btn")}</span>`;
+  document.getElementById("btn-pharma-nav").onclick=openLogin;
+  switchTab("hours"); showToast(t("toast_logout"));
+}
+
+/* ══════════════════════════
+   TOAST
+══════════════════════════ */
+function showToast(msg,isErr=false){
+  const t2=document.getElementById("toast");
+  document.getElementById("toast-icon").textContent=isErr?"⚠️":"✅";
+  document.getElementById("toast-msg").textContent=msg;
+  t2.className="toast"+(isErr?" red":"")+" show";
+  setTimeout(()=>t2.classList.remove("show"),3500);
+}
+
+/* ══════════════════════════
+   PARTICLES
+══════════════════════════ */
+function initParticles(){
+  const cont=document.getElementById("particles");
+  for(let i=0;i<12;i++){
+    const d=document.createElement("div"); d.className="p";
+    const sz=6+Math.random()*10;
+    Object.assign(d.style,{
+      width:sz+"px",height:sz+"px",left:(Math.random()*100)+"%",
+      background:`rgba(22,163,74,${0.05+Math.random()*0.1})`,
+      animationDuration:(15+Math.random()*20)+"s",
+      animationDelay:-(Math.random()*25)+"s",
+    }); cont.appendChild(d);
+  }
+}
+
+/* ══════════════════════════
+   INIT
+══════════════════════════ */
+applyDark();
+applyTranslations();
+renderMeds();
+updateStatusDisplay();
+updateGardeIndicators();
+initParticles();
+
+// Close modals on overlay click
+document.querySelectorAll(".modal-overlay").forEach(function(ov){
+  ov.addEventListener("click",function(e){ if(e.target===this) this.classList.remove("open"); });
+});
+</script>
+</body>
+</html>ck
+document.querySelectorAll(".modal-overlay").forEach(function(overlay){
+  overlay.addEventListener("click", function(e){
+    if(e.target === this) this.classL
